@@ -86,8 +86,8 @@ async def main():
             print("scrape data")
             await page.waitForSelector('[id=list detail eplist]')
             await page.click('[id=load_previous_episodes]')
-            episode_num = soup.select(div.load_previous_episodes)
-            print(episode_num.toString)
+            #episode_num = soup.select(div.load_previous_episodes)
+            #print(episode_num.toString)
             time.sleep(3)
             await page.screenshot({'path': 'C:/Users/gunas/temp/screenshot_prev.png'})
             count += 1
