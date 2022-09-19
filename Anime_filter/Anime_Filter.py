@@ -24,6 +24,7 @@ from pyppeteer import launch
 from bs4 import BeautifulSoup
 from pyppeteer import launch
 
+#screenshot_path='C:\temp\AnimeFilter'
 async def main():
     browser = await launch()
     page = await browser.newPage()
@@ -75,7 +76,7 @@ async def main():
     time.sleep(3) 
     await page.click('[class="ipc-title__text"]')
     time.sleep(3)
-    await page.screenshot({'path': 'C:/Users/gunas/temp/screenshot.png'})
+    await page.screenshot({'path': 'C:/temp/AnimeFilter/screenshot.png'})
     
     count = 0
     
@@ -89,7 +90,7 @@ async def main():
             #episode_num = soup.select(div.load_previous_episodes)
             #print(episode_num.toString)
             time.sleep(3)
-            await page.screenshot({'path': 'C:/Users/gunas/temp/screenshot_prev.png'})
+            await page.screenshot({'path': 'C:/temp/AnimeFilter/screenshot_prev.png'})
             count += 1
             
         else:
@@ -106,7 +107,7 @@ async def main():
     time.sleep(3)
 
     # Now take screenshot and exit
-    await page.screenshot({'path': 'C:/Users/gunas/temp/screenshot.png'})
+    await page.screenshot({'path': 'C:/temp/AnimeFilter/screenshot.png'})
     await browser.close()
 
 asyncio.get_event_loop().run_until_complete(main())
